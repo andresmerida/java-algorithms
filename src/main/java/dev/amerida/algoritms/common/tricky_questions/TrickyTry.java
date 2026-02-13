@@ -2,6 +2,7 @@ package dev.amerida.algoritms.common.tricky_questions;
 
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
+import java.util.Iterator;
 import java.util.List;
 
 public class TrickyTry {
@@ -15,10 +16,20 @@ public class TrickyTry {
         IO.println(getOverrideTry());
         IO.println();
 
-        immutableArray();
+        arrayModificationWithConcurrentModificationException();
+        IO.println();
+
+        arrayModification();
+
+        String str = null;
+        switch (str) {
+            case null -> IO.println("null");
+            case "a" -> IO.println("a");
+            default -> IO.println("default");
+        }
     }
 
-    public static void immutableArray() {
+    private static void arrayModificationWithConcurrentModificationException() {
         try {
             List<String> list = new ArrayList<>(List.of("a", "b", "c"));
             for (String s : list) {
@@ -28,7 +39,12 @@ public class TrickyTry {
             IO.println("ConcurrentModificationException");
             IO.println(e.getMessage());
         }
+    }
 
+    private static void arrayModification() {
+        List<String> list = new ArrayList<>(List.of("a", "b", "c"));
+        list.removeIf(element -> element.equals("b"));
+        IO.println(list);
     }
 
     public static void tryWithoutCatch() {
