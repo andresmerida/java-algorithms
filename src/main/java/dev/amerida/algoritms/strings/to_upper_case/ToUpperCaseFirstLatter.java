@@ -1,4 +1,4 @@
-package dev.amerida.algoritms.strings;
+package dev.amerida.algoritms.strings.to_upper_case;
 
 public class ToUpperCaseFirstLatter {
 
