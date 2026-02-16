@@ -1,5 +1,6 @@
 package dev.amerida.algoritms.strings;
 
+import dev.amerida.algoritms.strings.to_upper_case.ToUpperCaseFirstLatter;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
