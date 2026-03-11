@@ -45,4 +45,31 @@ public class FindFirstNotRepeatedChar {
 
         return '\0';
     }
+
+    public char findFirstNotRepeatedChar3(String str) {
+        if (str == null || str.isEmpty()) {
+            throw new IllegalArgumentException("String cannot be null or empty");
+        }
+        // input: "aabbcdde"
+        // output: c
+
+        char previousChar = str.charAt(0);
+        int counter = 1;
+        for (int i = 1; i < str.length(); i++) {
+            if (str.charAt(i) != previousChar) {
+                if (counter == 1) {
+                    return previousChar;
+                }
+                previousChar = str.charAt(i);
+                counter = 1;
+            } else {
+                counter++;
+            }
+        }
+        if (counter == 1) {
+            return previousChar;
+        }
+
+        return '\0'; // No non-repeated character found
+    }
 }
