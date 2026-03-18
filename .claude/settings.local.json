@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -R /Users/andresmerida/workspace/githup/java-algorithms/src/main/java/dev/amerida/algoritms/ 2>/dev/null | grep -E \"^/|\\\\.java$\" | head -50)"
+    ]
+  }
+}
