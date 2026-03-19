@@ -42,6 +42,7 @@ class FindFirstNotRepeatedCharTest {
         assertThrows(IllegalArgumentException.class, () -> findFirstNotRepeatedChar.findFirstNotRepeatedChar2(input));
     }
 
+
     @Test
     void setFindFirstNotRepeatedChar3 () {
         String input = "aabbcdd";
