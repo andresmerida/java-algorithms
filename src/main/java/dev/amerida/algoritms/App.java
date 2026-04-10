@@ -12,10 +12,14 @@ import java.util.Scanner;
 public class App {
     static void main( String[] args ) {
         int[] arr = new int[4]; // [5, 8, 50, 3] , [0,0,0,0]
-        fillArray(arr);
+        //fillArray(arr);
         showArray(arr);
         printMaxMin(arr);
         printSumArray(arr);
+        IO.println();
+        printPyramidOddEven(4);
+        IO.println();
+        fillMatrix(5);
     }
 
     private static void printSumArray(int[] arr) {
@@ -78,6 +82,55 @@ public class App {
             }
         }
         IO.println("]");
+    }
+
+    /**
+     * 1
+     * 2 3
+     * 6 5 4
+     * 7 8 9 10
+     * @param n number of rows
+     */
+    public static void printPyramidOddEven(int n) {
+        int counter = 1;
+        for (int i = 1; i <= n; i++) {
+            int minNumber = counter;
+            int maxNumber = counter + i - 1;
+            if (i % 2 == 0) {
+                for (int j = minNumber; j <= maxNumber; j++) {
+                    System.out.print(j + (j == maxNumber ? "" : " "));
+                }
+            } else {
+                for (int j = maxNumber; j >= minNumber; j--) {
+                    System.out.print(j + (j == minNumber ? "" : " "));
+                }
+            }
+            System.out.println();
+            counter = maxNumber + 1;
+        }
+    }
+
+    public static void fillMatrix(int n) {
+        int sizeMatrix = 5;
+        int[][] matrix = new int[sizeMatrix][sizeMatrix];
+
+        int counter = 1;
+        for (int i = 0; i < sizeMatrix; i++) {
+            for (int j = 0; j < sizeMatrix; j++) {
+                matrix[i][j] = counter;
+                counter++;
+            }
+        }
+        printMatrix(matrix);
+    }
+
+    public static void printMatrix(int[][] matrix) {
+        for (int[] ints : matrix) {
+            for (int number : ints) {
+                System.out.print((number < 10 ? "0" + number : number) + " ");
+            }
+            System.out.println();
+        }
     }
 
     public static void printArray(int[] arr) {
