@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class App {
     static void main( String[] args ) {
         int[] arr = new int[4]; // [5, 8, 50, 3] , [0,0,0,0]
-        //fillArray(arr);
+        //fillArray(arr); It was disabled to avoid the user to enter the same number
         showArray(arr);
         printMaxMin(arr);
         printSumArray(arr);
