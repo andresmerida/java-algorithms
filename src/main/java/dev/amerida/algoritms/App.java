@@ -19,6 +19,7 @@ public class App {
         IO.println();
         printPyramidOddEven(4);
         IO.println();
+        // fill matrix
         fillMatrix(5);
     }
 
