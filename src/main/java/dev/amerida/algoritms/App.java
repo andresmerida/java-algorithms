@@ -4,9 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * Desarrolle un programa que permita cargar numeros enteros no repetidos a un arreglo de tamaño 10.
- * A continuacion debera determinar el maximo y minimo de los numeros del arreglo. Tambien indicar cuantos valores no se encuentran presentes
- * e indicar la suma de los numeros del arreglo.
+ * Hello world!
  *
  */
 public class App {
@@ -136,5 +134,13 @@ public class App {
 
     public static void printArray(int[] arr) {
         IO.println(Arrays.toString(arr));
+        System.out.println( "Hello World!" );
+        String greeting = "Hello World!";
+        String wordsNormalized = greeting.replaceAll("[^a-zA-z ]", "").toLowerCase();
+        System.out.println(wordsNormalized);
+        IO.println();
+        String[] words = wordsNormalized.split(" ");
+        IO.println(words.length);
+        Arrays.stream(words).forEach(System.out::println);
     }
 }
